@@ -1,0 +1,9 @@
+uuid: d1d62370-6252-4653-a4c2-42679b028c54
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Car Type'
+vid: car_type
+description: 'Select Car type'
+weight: 0
+new_revision: false

@@ -1,0 +1,20 @@
+uuid: 710e079d-310f-4af6-9048-26b99e7e5ba9
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - booking
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: booking_primary_admin_actions
+theme: booking
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

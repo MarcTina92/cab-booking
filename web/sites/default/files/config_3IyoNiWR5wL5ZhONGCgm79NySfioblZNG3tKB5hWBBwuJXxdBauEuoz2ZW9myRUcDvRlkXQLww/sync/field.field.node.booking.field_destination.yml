@@ -1,0 +1,19 @@
+uuid: b8d9d7c6-a078-40f5-905c-c9d4993af060
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destination
+    - node.type.booking
+id: node.booking.field_destination
+field_name: field_destination
+entity_type: node
+bundle: booking
+label: Drop
+description: 'Enter Drop point'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 19bf0ec8-5f97-49a7-a916-0881c7b7965a
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - booking
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: booking_site_branding
+theme: booking
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,45 @@
+uuid: ab5b18fb-bcd0-45e8-9fa8-a17529afca8f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.booking.body
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_contact_number
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_email_id
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - text
+    - user
+id: node.booking.teaser
+targetEntityType: node
+bundle: booking
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_car_type: true
+  field_contact_number: true
+  field_destination: true
+  field_email_id: true
+  field_from: true
+  field_full_name: true
+  field_seats: true
+  langcode: true

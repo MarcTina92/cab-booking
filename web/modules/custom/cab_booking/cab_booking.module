@@ -1,0 +1,52 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function cab_booking_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && $entity->bundle() === 'booking') {
+    // Set a default title before saving.
+    $entity->setTitle('Booking');
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function cab_booking_entity_insert(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && $entity->bundle() === 'booking') {
+    // Set the title to include node ID after the node is created.
+    $entity->setTitle('Booking #' . $entity->id());
+    $entity->save();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cab_booking_theme($existing, $type, $theme, $path) {
+  return [
+    'cab_booking' => [
+      'variables' => [
+        'booking_form' => NULL,
+      ],
+      'template' => 'cab-booking',
+    ],
+  ];
+}
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cab_booking_form_node_booking_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Change the submit button label from "Save" to "Book"
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#value'] = t('Book');
+  }
+}

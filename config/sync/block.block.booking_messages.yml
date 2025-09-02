@@ -1,0 +1,22 @@
+uuid: 97b983ce-f28d-4baf-9e9f-aed8f637511f
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - booking
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: booking_messages
+theme: booking
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

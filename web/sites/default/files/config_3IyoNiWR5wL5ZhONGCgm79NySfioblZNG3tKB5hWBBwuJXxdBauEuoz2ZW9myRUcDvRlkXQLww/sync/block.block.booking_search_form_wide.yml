@@ -1,0 +1,23 @@
+uuid: cb0b3e54-9e66-40de-99b0-d0f47b655ed4
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - booking
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: booking_search_form_wide
+theme: booking
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

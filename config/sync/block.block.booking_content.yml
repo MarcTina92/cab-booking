@@ -1,0 +1,22 @@
+uuid: e152eb5f-6dd3-4c58-8d91-144da61f6bdf
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - booking
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: booking_content
+theme: booking
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

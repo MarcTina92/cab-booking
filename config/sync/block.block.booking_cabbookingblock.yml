@@ -1,0 +1,25 @@
+uuid: dc6230a1-1ded-4cd1-9f0a-991af42cc2bd
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - cab_booking
+    - system
+  theme:
+    - booking
+id: booking_cabbookingblock
+theme: booking
+region: content
+weight: 0
+provider: null
+plugin: cab_booking_block
+settings:
+  id: cab_booking_block
+  label: 'Cab Booking Block'
+  label_display: '0'
+  provider: cab_booking
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

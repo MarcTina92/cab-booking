@@ -1,0 +1,59 @@
+uuid: 7866a401-98d5-4dba-bb2d-7801f466a8d2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.booking.body
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - google_place_autocomplete
+id: node.booking.default
+targetEntityType: node
+bundle: booking
+mode: default
+content:
+  field_car_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_destination:
+    type: google_place_autocomplete_field_widget
+    weight: 1
+    region: content
+    settings:
+      types: ''
+      country:
+        - IN
+    third_party_settings: {  }
+  field_from:
+    type: google_place_autocomplete_field_widget
+    weight: 0
+    region: content
+    settings:
+      types: ''
+      country:
+        - IN
+    third_party_settings: {  }
+  field_seats:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

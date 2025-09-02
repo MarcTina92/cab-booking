@@ -1,0 +1,19 @@
+uuid: 04453bd8-5360-404e-be44-559764d3fa4d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_full_name
+    - node.type.booking
+id: node.booking.field_full_name
+field_name: field_full_name
+entity_type: node
+bundle: booking
+label: 'Full Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

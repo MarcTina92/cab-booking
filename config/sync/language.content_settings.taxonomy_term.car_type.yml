@@ -1,0 +1,11 @@
+uuid: 6e5fe80e-1077-405b-8cc3-45f868436e0c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.car_type
+id: taxonomy_term.car_type
+target_entity_type_id: taxonomy_term
+target_bundle: car_type
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,4 @@
+name: cab-booking
+recipe: drupal10
+config:
+  webroot: web

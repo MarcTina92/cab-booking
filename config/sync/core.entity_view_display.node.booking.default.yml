@@ -1,0 +1,87 @@
+uuid: 943e375c-d0e2-4d8a-bf72-d08d8d0afdc7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.booking.body
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_contact_number
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_email_id
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - phonenumber
+    - user
+id: node.booking.default
+targetEntityType: node
+bundle: booking
+mode: default
+content:
+  field_car_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_contact_number:
+    type: phone_international
+    label: above
+    settings:
+      title: ''
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_destination:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_email_id:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_from:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_full_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_seats:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true

@@ -1,0 +1,66 @@
+uuid: 943e375c-d0e2-4d8a-bf72-d08d8d0afdc7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.booking.body
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - text
+    - user
+id: node.booking.default
+targetEntityType: node
+bundle: booking
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_car_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_destination:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_from:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_seats:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

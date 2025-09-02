@@ -1,0 +1,22 @@
+uuid: 39486b12-266f-4236-9c92-68d2c95e342a
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - booking
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: booking_primary_local_tasks
+theme: booking
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,66 @@
+.site-branding {
+  width: 100%;
+}
+
+.cab-booking-wrapper {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.cab-booking-wrapper .form-wrapper {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.cab-booking-wrapper .right-wrapper {
+  flex: 0 0 40%;
+  max-width: 100%;
+  min-height: 400px; 
+}
+
+.cab-booking-wrapper .route-map {
+  flex: 0 0 100%;
+  max-width: auto;
+  min-height: 400px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.distance-summary {
+    font-size: 16px;
+    font-weight: 700;
+    color:#571B4D;
+}
+h2 {
+    color:#571B4D;
+}
+
+.page-wrapper {
+  max-width: 100%;
+}
+.container {
+    max-width: 100%;
+}
+.site-branding {
+    background-image: linear-gradient(160deg, var(--color--primary-50) 0%, var(--color--primary-50) 78.66%);
+}
+
+.location-wrapper, .preference-wrapper, .contact-wrapper {
+    display: flex;
+    width: 70%;
+    gap: 10%;
+}
+
+.distance-summary {
+    border: 2px solid #571B4D;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.form-element {
+    width: 100%;
+}
+
+#edit-field-full-name-wrapper {
+    max-width: 91%;
+}
