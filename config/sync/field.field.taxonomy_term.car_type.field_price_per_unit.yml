@@ -1,0 +1,23 @@
+uuid: 9c7e2b52-150e-4385-9aac-ba9330b7dcd9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_price_per_unit
+    - taxonomy.vocabulary.car_type
+id: taxonomy_term.car_type.field_price_per_unit
+field_name: field_price_per_unit
+entity_type: taxonomy_term
+bundle: car_type
+label: 'Price Per Unit'
+description: 'Set Price per KM for vehicle'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,23 @@
+uuid: fae58b22-a1b8-440d-9c1a-c853f43455d9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_minimum_price
+    - taxonomy.vocabulary.car_type
+id: taxonomy_term.car_type.field_minimum_price
+field_name: field_minimum_price
+entity_type: taxonomy_term
+bundle: car_type
+label: 'Minimum Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

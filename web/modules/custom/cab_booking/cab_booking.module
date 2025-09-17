@@ -49,4 +49,32 @@ function cab_booking_form_node_booking_form_alter(&$form, FormStateInterface $fo
   if (isset($form['actions']['submit'])) {
     $form['actions']['submit']['#value'] = t('Book');
   }
+  $form['#validate'][] = 'cab_booking_form_node_booking_form_validate';
+}
+
+/**
+ * Form validation handler for node_booking_form.
+ */
+function cab_booking_form_node_booking_form_validate(&$form, FormStateInterface $form_state) {
+  $booking_values = $form_state->getValues();
+  // Get selected car type and seats from form values.
+  $car_type = reset($booking_values['field_car_type']);
+  $car_type = $car_type['target_id'];
+  $seats_selected = reset($booking_values['field_seats']);
+  $seats_selected = $seats_selected['value'];
+  // Get car types from DrupalSettings (populated in block).
+  
+  $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $car_type_term = $termStorage->load($car_type);
+  
+  if (
+    $car_type_term->get('field_seat_capacity')->value !== ''
+  ) {
+    $allowed_seats = $car_type_term->get('field_seat_capacity')->value;
+    if ($seats_selected > $allowed_seats) {
+      $form_state->setErrorByName('field_seats', t('Selected seats exceed allowed capacity (@capacity).', [
+        '@capacity' => $allowed_seats,
+      ]));
+    }
+  }
 }

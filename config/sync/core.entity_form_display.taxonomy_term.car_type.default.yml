@@ -1,0 +1,91 @@
+uuid: c9840edb-ef93-46f9-9556-3240858ffd84
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.car_type.field_maximum_distance
+    - field.field.taxonomy_term.car_type.field_minimum_distance
+    - field.field.taxonomy_term.car_type.field_minimum_price
+    - field.field.taxonomy_term.car_type.field_price_per_unit
+    - field.field.taxonomy_term.car_type.field_seat_capacity
+    - taxonomy.vocabulary.car_type
+  module:
+    - path
+    - text
+id: taxonomy_term.car_type.default
+targetEntityType: taxonomy_term
+bundle: car_type
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_maximum_distance:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_minimum_distance:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_minimum_price:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_price_per_unit:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_seat_capacity:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 7
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

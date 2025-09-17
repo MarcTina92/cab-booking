@@ -1,0 +1,74 @@
+uuid: cc3abd9c-dab9-4e0b-b9f6-0f67224d256d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.car_type.field_maximum_distance
+    - field.field.taxonomy_term.car_type.field_minimum_distance
+    - field.field.taxonomy_term.car_type.field_minimum_price
+    - field.field.taxonomy_term.car_type.field_price_per_unit
+    - field.field.taxonomy_term.car_type.field_seat_capacity
+    - taxonomy.vocabulary.car_type
+  module:
+    - text
+id: taxonomy_term.car_type.default
+targetEntityType: taxonomy_term
+bundle: car_type
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_maximum_distance:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_minimum_distance:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_minimum_price:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_price_per_unit:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_seat_capacity:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

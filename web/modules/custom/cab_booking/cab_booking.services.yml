@@ -1,0 +1,5 @@
+services:
+  cab_booking.car_type_service:
+    class: 'Drupal\cab_booking\Service\CarTypeService'
+    arguments:
+      - '@entity_type.manager'

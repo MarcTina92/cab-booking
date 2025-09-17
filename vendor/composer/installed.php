@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'b7546823ba240585385495c898580d9f2a487220',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -161,6 +161,15 @@
             'install_path' => __DIR__ . '/../doctrine/lexer',
             'aliases' => array(),
             'reference' => '861c870e8b75f7c8f69c146c7f89cc1c0f1b49b6',
+            'dev_requirement' => false,
+        ),
+        'drupal/captcha' => array(
+            'pretty_version' => '2.0.9',
+            'version' => '2.0.9.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/captcha',
+            'aliases' => array(),
+            'reference' => '2.0.9',
             'dev_requirement' => false,
         ),
         'drupal/core' => array(
@@ -416,12 +425,12 @@
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'b7546823ba240585385495c898580d9f2a487220',
             'dev_requirement' => false,
         ),
         'drush/drush' => array(

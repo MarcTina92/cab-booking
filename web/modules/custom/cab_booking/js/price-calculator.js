@@ -70,10 +70,14 @@
           directionsService,
           directionsRenderer
         ) {
-          if (!$('#edit-field-from-0-value').val() || !$('#edit-field-destination-0-value').val()) {
+          if (
+            !$('#edit-field-from-0-value').val() || 
+            !$('#edit-field-destination-0-value').val() ||
+            $('#edit-field-car-type').val() === '_none' ||
+            !$.isNumeric($('#edit-field-car-type').val())
+          ) {
             return;
           }
-          
           directionsService
             .route({
               origin: {
@@ -90,7 +94,13 @@
                 // Show in UI or calculate fare
                 document.getElementById('distance').innerText = result.distance.text;
                 document.getElementById('duration').innerText = result.duration.text;
-                document.getElementById('price').innerText = getPrice(result.distance.value);
+                const price = getPrice(result.distance.value);
+                if ($.isNumeric(price)) {
+                  document.getElementById('price').innerText = price;
+                }
+                else {
+                  document.getElementById('price').innerHTML = '<div class="tooltip">Request Quote<span class="tooltiptext">Book and our team will contact you for price</span></div>';
+                }
               });
             })
             .catch((e) => console.log("Directions request failed due to " + e));
@@ -99,26 +109,40 @@
     }
   }
     
-  function getPrice(distance) {
-    // Example pricing logic: $1 per kilometer
-    // Adjust this logic based on your pricing model
-    $vehicleType = $('#edit-field-car-type').val();
-    var pricePerKm = 10;
-    if ($vehicleType == 1) {
-       pricePerKm = 10; // Luxury vehicle price per km
-    }
-    else if ($vehicleType == 2) {
-       pricePerKm = 15; // Standard vehicle price per km
-    }
-    else if ($vehicleType == 3) {
-       pricePerKm = 8; // Standard vehicle price per km
-    }
-    else if ($vehicleType == 4) {
-      pricePerKm = 20; // Standard vehicle price per km
+  function getPrice(route_distance) {
+    const vehicleType = $('#edit-field-car-type').val();
+    const carTypes = drupalSettings.cab_booking.car_types;
+
+    if (!$.isNumeric(vehicleType) || !carTypes || !carTypes[vehicleType]) {
+      return '';
     }
 
-    const distanceInKm = distance / 1000; // Convert meters to kilometers
-    return (distanceInKm * pricePerKm).toFixed(2); // Return price rounded to 2 decimal places  
+    const {
+      price_per_unit,
+      minimum_distance,
+      minimum_price,
+      maximum_distance
+    } = carTypes[vehicleType];
+    
+    if (
+      !$.isNumeric(price_per_unit) ||
+      !$.isNumeric(minimum_distance) ||
+      !$.isNumeric(minimum_price) ||
+      !$.isNumeric(maximum_distance)
+    ) {
+      return '';
+    }
+
+    const route_distance_in_km = route_distance / 1000; // Convert meters to kilometers
+    if (route_distance_in_km < minimum_distance) {
+      return minimum_price;
+    }
+
+    if (route_distance_in_km > maximum_distance) {
+      return '';
+    }
+    return (route_distance_in_km * price_per_km).toFixed(2); // Return price rounded to 2 decimal places  
+
   }
 
   function getDistanceBetweenPlaces(sourcePlaceId, destinationPlaceId, callback) {

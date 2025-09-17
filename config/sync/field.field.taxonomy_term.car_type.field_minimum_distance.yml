@@ -1,0 +1,23 @@
+uuid: f30d0d1d-5390-48c9-9bbc-d06b972f0472
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_minimum_distance
+    - taxonomy.vocabulary.car_type
+id: taxonomy_term.car_type.field_minimum_distance
+field_name: field_minimum_distance
+entity_type: taxonomy_term
+bundle: car_type
+label: 'Minimum Distance'
+description: 'The minimum distance which will be considered as default while booking this vehicle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+uuid: c8b9e857-ed17-4d34-acd5-a4518065b8c4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_seat_capacity
+    - taxonomy.vocabulary.car_type
+id: taxonomy_term.car_type.field_seat_capacity
+field_name: field_seat_capacity
+entity_type: taxonomy_term
+bundle: car_type
+label: 'Seat Capacity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
