@@ -3,4 +3,8 @@ recipe: drupal10
 config:
   webroot: web
   php: '8.2'
-  healthcheck: false
+
+services:
+  appserver:
+    healthcheck:
+      disable: true

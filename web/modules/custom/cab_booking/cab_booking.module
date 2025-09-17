@@ -71,7 +71,10 @@ function cab_booking_form_node_booking_form_validate(&$form, FormStateInterface 
     $car_type_term->get('field_seat_capacity')->value !== ''
   ) {
     $allowed_seats = $car_type_term->get('field_seat_capacity')->value;
-    if ($seats_selected > $allowed_seats) {
+    if (
+      is_numeric($allowed_seats) &&
+      $seats_selected > $allowed_seats
+    ) {
       $form_state->setErrorByName('field_seats', t('Selected seats exceed allowed capacity (@capacity).', [
         '@capacity' => $allowed_seats,
       ]));
