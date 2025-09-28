@@ -44,6 +44,7 @@ module:
   path: 0
   path_alias: 0
   phonenumber: 0
+  recaptcha_v3: 0
   search: 0
   shortcut: 0
   system: 0

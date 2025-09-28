@@ -1,0 +1,24 @@
+uuid: 031e9e8d-5d72-4038-9a3e-3e845c1634d0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_message
+    - filter.format.basic_html
+    - node.type.booking
+  module:
+    - text
+id: node.booking.field_message
+field_name: field_message
+entity_type: node
+bundle: booking
+label: Message
+description: 'This message will be sent to user along with booking status via Email.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

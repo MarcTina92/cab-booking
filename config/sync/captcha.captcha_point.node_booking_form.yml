@@ -3,5 +3,5 @@ langcode: en-gb
 status: true
 dependencies: {  }
 formId: node_booking_form
-captchaType: captcha/Math
+captchaType: recaptcha_v3/recaptcha_v3_action
 label: node_booking_form

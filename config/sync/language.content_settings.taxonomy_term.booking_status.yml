@@ -1,0 +1,11 @@
+uuid: 4b654342-5601-466a-9f87-974583d4d96b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.booking_status
+id: taxonomy_term.booking_status
+target_entity_type_id: taxonomy_term
+target_bundle: booking_status
+default_langcode: site_default
+language_alterable: false

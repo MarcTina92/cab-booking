@@ -24,6 +24,7 @@
         "drupal/geolocation": "^3.14",
         "drupal/google_place_autocomplete": "^2.1",
         "drupal/phonenumber": "^1.0@beta",
+        "drupal/recaptcha_v3": "^2.0",
         "drush/drush": "^12.5"
     },
     "conflict": {

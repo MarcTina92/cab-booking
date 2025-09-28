@@ -1,0 +1,23 @@
+uuid: ea7dd83e-ac9f-482f-ac6e-2a1f298e1637
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_distance
+    - node.type.booking
+id: node.booking.field_distance
+field_name: field_distance
+entity_type: node
+bundle: booking
+label: Distance
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

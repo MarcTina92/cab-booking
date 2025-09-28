@@ -93,10 +93,16 @@
                getDistanceBetweenPlaces(Drupal.originalPlace.place_id, Drupal.destinationPlace.place_id, function(result) {
                 // Show in UI or calculate fare
                 document.getElementById('distance').innerText = result.distance.text;
+                let distance_in_km = result.distance.value / 1000;
+                $('#edit-field-distance-0-value').val(distance_in_km.toFixed(2)); // in KM
                 document.getElementById('duration').innerText = result.duration.text;
+                let duration_in_minutes = result.duration.value / 60;
+                $('#edit-field-duration-0-value').val(duration_in_minutes.toFixed(2)); // in minutes
                 const price = getPrice(result.distance.value);
+                $('#edit-field-price-0-value').val('');
                 if ($.isNumeric(price)) {
                   document.getElementById('price').innerText = price;
+                  $('#edit-field-price-0-value').val(price);
                 }
                 else {
                   document.getElementById('price').innerHTML = '<div class="tooltip">Request Quote<span class="tooltiptext">Book and our team will contact you for price</span></div>';

@@ -1,0 +1,14 @@
+uuid: 381946ee-d3c3-451f-9534-d8d700da204b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - user.role.booking_manager
+  module:
+    - user
+id: user_remove_role_action.booking_manager
+label: 'Remove the Booking Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: booking_manager

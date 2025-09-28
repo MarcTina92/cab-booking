@@ -1,0 +1,14 @@
+uuid: d8c5b698-14f3-4b2e-8514-f280b104efc7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.booking
+  module:
+    - node
+id: booking_manager
+label: 'Booking Manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'edit any booking content'

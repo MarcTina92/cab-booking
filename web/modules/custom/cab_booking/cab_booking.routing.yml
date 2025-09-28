@@ -1,0 +1,12 @@
+cab_booking.booking.confirm:
+  path: '/booking/{node}/confirm'
+  defaults:
+    _entity_form: 'node.booking_confirm'
+    _title: 'Confirm Booking'
+  requirements:
+    # _permission: 'confirm booking'
+    _entity_access: 'node.update'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1,0 +1,11 @@
+uuid: 450359f1-7003-4580-9f8c-ada479fda639
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: node.user_booking
+label: 'User Booking'
+description: 'Form show for user while booking the vehicle.'
+targetEntityType: node
+cache: true

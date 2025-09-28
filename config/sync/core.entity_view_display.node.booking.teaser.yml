@@ -5,12 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.booking.body
+    - field.field.node.booking.field_booking_status
     - field.field.node.booking.field_car_type
     - field.field.node.booking.field_contact_number
     - field.field.node.booking.field_destination
+    - field.field.node.booking.field_distance
+    - field.field.node.booking.field_duration
     - field.field.node.booking.field_email_id
     - field.field.node.booking.field_from
     - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_message
+    - field.field.node.booking.field_price
     - field.field.node.booking.field_seats
     - node.type.booking
   module:
@@ -35,11 +40,16 @@ content:
     weight: 100
     region: content
 hidden:
+  field_booking_status: true
   field_car_type: true
   field_contact_number: true
   field_destination: true
+  field_distance: true
+  field_duration: true
   field_email_id: true
   field_from: true
   field_full_name: true
+  field_message: true
+  field_price: true
   field_seats: true
   langcode: true

@@ -1,0 +1,8 @@
+uuid: e1538178-9560-4693-b6f3-b010dc79c53f
+langcode: en-gb
+status: true
+dependencies: {  }
+id: recaptcha_v3_action
+label: 'reCAPTCHA v3 action'
+threshold: 0.5
+challenge: captcha/Math

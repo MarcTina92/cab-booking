@@ -1,0 +1,144 @@
+uuid: 02af17b6-8163-474b-8350-2297c8fc16be
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.booking_confirm
+    - field.field.node.booking.body
+    - field.field.node.booking.field_booking_status
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_contact_number
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_distance
+    - field.field.node.booking.field_duration
+    - field.field.node.booking.field_email_id
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_message
+    - field.field.node.booking.field_price
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_location_wrapper:
+      children: {  }
+      label: 'Location wrapper'
+      region: hidden
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: location-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_preference_wrapper:
+      children: {  }
+      label: 'Preference Wrapper'
+      region: hidden
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: preference-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+    group_contact_details_wrapper:
+      children: {  }
+      label: 'Contact Details Wrapper'
+      region: hidden
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: contact-details-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+    group_contact_wrapper:
+      children: {  }
+      label: 'Contact wrapper'
+      region: hidden
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: contact-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+id: node.booking.booking_confirm
+targetEntityType: node
+bundle: booking
+mode: booking_confirm
+content:
+  field_booking_status:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_message:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_car_type: true
+  field_contact_number: true
+  field_destination: true
+  field_distance: true
+  field_duration: true
+  field_email_id: true
+  field_from: true
+  field_full_name: true
+  field_price: true
+  field_seats: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

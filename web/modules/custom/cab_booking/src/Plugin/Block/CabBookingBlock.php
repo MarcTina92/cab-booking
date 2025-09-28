@@ -4,6 +4,8 @@ namespace Drupal\cab_booking\Plugin\Block;
 
 use Drupal\cab_booking\Service\CarTypeService;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityFormBuilderInterface;
+use Drupal\Core\Form\FormBuilder;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -21,9 +23,22 @@ class CabBookingBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
   protected $carTypeService;
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CarTypeService $carTypeService) {
+   /**
+   * @var \Drupal\Core\Entity\EntityFormBuilderInterface
+   */
+  protected $entityFormBuilder;
+
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    CarTypeService $carTypeService,
+    EntityFormBuilderInterface $entityFormBuilder
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->carTypeService = $carTypeService;
+    $this->entityFormBuilder = $entityFormBuilder;
+    
   }
 
   /**
@@ -34,7 +49,8 @@ class CabBookingBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('cab_booking.car_type_service')
+      $container->get('cab_booking.car_type_service'),
+      $container->get('entity.form_builder')
     );
   }
 
@@ -48,8 +64,7 @@ class CabBookingBlock extends BlockBase implements ContainerFactoryPluginInterfa
       ->getFormObject('node', 'default')
       ->setEntity($node);
 
-    $form_builder = \Drupal::service('form_builder');
-    $rendered_form = $form_builder->getForm($form);
+    $rendered_form = $this->entityFormBuilder->getForm($node, 'user_booking');
     // Load car types and their details.
     $carTypes = $this->carTypeService->getCarTypes();
     // Attach carTypes to DrupalSettings for JS access.

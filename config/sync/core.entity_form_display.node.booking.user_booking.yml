@@ -1,0 +1,242 @@
+uuid: 72ccda08-0bc2-4895-9039-b1459800d7c2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.user_booking
+    - field.field.node.booking.body
+    - field.field.node.booking.field_booking_status
+    - field.field.node.booking.field_car_type
+    - field.field.node.booking.field_contact_number
+    - field.field.node.booking.field_destination
+    - field.field.node.booking.field_distance
+    - field.field.node.booking.field_duration
+    - field.field.node.booking.field_email_id
+    - field.field.node.booking.field_from
+    - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_message
+    - field.field.node.booking.field_price
+    - field.field.node.booking.field_seats
+    - node.type.booking
+  module:
+    - field_group
+    - google_place_autocomplete
+    - phonenumber
+third_party_settings:
+  field_group:
+    group_location_wrapper:
+      children:
+        - field_from
+        - field_destination
+      label: 'Location wrapper'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: location-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_preference_wrapper:
+      children:
+        - field_seats
+        - field_car_type
+      label: 'Preference Wrapper'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: preference-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+    group_contact_details_wrapper:
+      children:
+        - field_full_name
+      label: 'Contact Details Wrapper'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: contact-details-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+    group_contact_wrapper:
+      children:
+        - field_email_id
+        - field_contact_number
+      label: 'Contact wrapper'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: contact-wrapper
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+    group_hidden_fields:
+      children:
+        - field_duration
+        - field_distance
+        - field_price
+      label: 'Hidden Fields'
+      region: content
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: hidden1
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+id: node.booking.user_booking
+targetEntityType: node
+bundle: booking
+mode: user_booking
+content:
+  field_car_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_contact_number:
+    type: phone_default
+    weight: 5
+    region: content
+    settings:
+      initial_country: auto
+      preferred_countries:
+        - US
+        - GB
+      allow_dropdown: true
+      fix_dropdown_width: true
+      separate_dial_code: false
+      show_flags: true
+      country_search: true
+      format_as_you_type: true
+      format_on_display: true
+      use_fullscreen_popup: true
+      remove_start_zero: true
+      mask_formatter: true
+      show_error: false
+    third_party_settings: {  }
+  field_destination:
+    type: google_place_autocomplete_field_widget
+    weight: 2
+    region: content
+    settings:
+      types: ''
+      country:
+        - IN
+    third_party_settings: {  }
+  field_distance:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_duration:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_email_id:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_from:
+    type: google_place_autocomplete_field_widget
+    weight: 1
+    region: content
+    settings:
+      types: ''
+      country:
+        - IN
+    third_party_settings: {  }
+  field_full_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_price:
+    type: number
+    weight: 27
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_seats:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_booking_status: true
+  field_message: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

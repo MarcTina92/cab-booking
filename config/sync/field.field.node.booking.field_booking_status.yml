@@ -1,0 +1,33 @@
+uuid: 5a604e66-177f-4dd4-84ae-627af900f990
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booking_status
+    - node.type.booking
+    - taxonomy.vocabulary.booking_status
+  content:
+    - 'taxonomy_term:booking_status:c5768579-1096-402c-9dee-86e3d10df671'
+id: node.booking.field_booking_status
+field_name: field_booking_status
+entity_type: node
+bundle: booking
+label: 'Booking Status'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: c5768579-1096-402c-9dee-86e3d10df671
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      booking_status: booking_status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

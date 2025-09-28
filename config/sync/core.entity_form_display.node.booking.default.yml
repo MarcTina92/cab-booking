@@ -4,18 +4,24 @@ status: true
 dependencies:
   config:
     - field.field.node.booking.body
+    - field.field.node.booking.field_booking_status
     - field.field.node.booking.field_car_type
     - field.field.node.booking.field_contact_number
     - field.field.node.booking.field_destination
+    - field.field.node.booking.field_distance
+    - field.field.node.booking.field_duration
     - field.field.node.booking.field_email_id
     - field.field.node.booking.field_from
     - field.field.node.booking.field_full_name
+    - field.field.node.booking.field_message
+    - field.field.node.booking.field_price
     - field.field.node.booking.field_seats
     - node.type.booking
   module:
     - field_group
     - google_place_autocomplete
     - phonenumber
+    - text
 third_party_settings:
   field_group:
     group_location_wrapper:
@@ -110,6 +116,12 @@ targetEntityType: node
 bundle: booking
 mode: default
 content:
+  field_booking_status:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_car_type:
     type: options_select
     weight: 3
@@ -146,6 +158,20 @@ content:
       country:
         - IN
     third_party_settings: {  }
+  field_distance:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_duration:
+    type: number
+    weight: 29
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_email_id:
     type: email_default
     weight: 4
@@ -169,6 +195,21 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_message:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_price:
+    type: number
+    weight: 27
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_seats:

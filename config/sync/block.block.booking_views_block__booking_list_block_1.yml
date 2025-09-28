@@ -1,0 +1,39 @@
+uuid: 4f36b8eb-0a8c-487e-8f35-25106d4b2e15
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.booking_list
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - booking
+id: booking_views_block__booking_list_block_1
+theme: booking
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:booking_list-block_1'
+settings:
+  id: 'views_block:booking_list-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/booking/*/confirm'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      booking_manager: booking_manager

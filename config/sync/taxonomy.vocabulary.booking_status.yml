@@ -1,0 +1,9 @@
+uuid: 82a2e234-ef4e-47c6-ac79-76b2a789007a
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Booking Status'
+vid: booking_status
+description: 'Booking status for vehicles'
+weight: 0
+new_revision: false
