@@ -122,7 +122,7 @@ third_party_settings:
       weight: 20
       format_type: html_element
       format_settings:
-        classes: hidden1
+        classes: hidden
         show_empty_fields: false
         id: ''
         label_as_html: false
